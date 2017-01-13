@@ -13,6 +13,9 @@ module ClipboardMonitor
     def clipboard_text
       return Clipboard.paste.strip
     end
+    def stop_monitoring
+      scheduler.shutdown
+    end
     def check_text_change
       current_text = clipboard_text
       if current_text == last_text

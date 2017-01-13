@@ -6,5 +6,8 @@ module ClipboardMonitor
         block.call(txt)
       end
     end
+    def self.stop
+      @clipboard_internal.stop_monitoring
+    end
   end
 end
